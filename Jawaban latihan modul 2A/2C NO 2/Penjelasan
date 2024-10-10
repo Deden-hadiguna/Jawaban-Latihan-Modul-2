@@ -1,0 +1,49 @@
+jawaban A
+Jika nam diberikan adalah 80.1, keluaran dari program tersebut adalah:
+Nilai mata kuliah: A
+
+jawaban B
+Kesalahan dalam program: Struktur if yang tidak lengkap: Program tidak menggunakan else if untuk kondisi yang bertingkat. Hal ini dapat menyebabkan beberapa kondisi terpenuhi sekaligus, dan hanya satu nilai yang akan disimpan di nmk.
+Penggunaan else yang tidak tepat: Bagian untuk nam <= 40 seharusnya ditangani dengan else if untuk memisahkan logika.
+Alur program seharusnya: Program harus memeriksa setiap kondisi secara berurutan menggunakan if, else if, dan else sehingga hanya satu nilai nmk yang ditugaskan berdasarkan rentang nam yang sesuai.
+
+jawaban C
+Perbaikan program:
+package main
+
+import "fmt"
+
+func main() {
+	var nam float64
+	var nmk string
+
+	fmt.Print("Nilai akhir mata kuliah: ")
+	fmt.Scanln(&nam)
+
+	if nam > 80 {
+		nmk = "A"
+	} else if nam > 72.5 {
+		nmk = "AB"
+	} else if nam > 65 {
+		nmk = "B"
+	} else if nam >= 57.5 {
+		nmk = "BC"
+	} else if nam >= 50 {
+		nmk = "C"
+	} else if nam >= 40 {
+		nmk = "D"
+	} else {
+		nmk = "E"
+	}
+
+	fmt.Println("Nilai mata kuliah:", nmk)
+}
+
+//OUTPUT PERBAIKAN PROGRAM
+//Uji coba:
+Input: 93.5
+Output: Nilai mata kuliah: A
+Input: 70.6
+Output: Nilai mata kuliah: B
+Input: 49.5
+Output: Nilai mata kuliah: D
